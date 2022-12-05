@@ -55,6 +55,8 @@ body{
     letter-spacing: 1px;
     line-height: 200px;
     animation: text 3s ease-in-out linear;
+    z-index: 100;
+    text-decoration: none;
 
 }
 @keyframes text{
