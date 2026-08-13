@@ -1,0 +1,527 @@
+/* ---- tokens ---- */
+
+:root {
+  --bg: #0a0a0d;
+  --bg-raised: #131318;
+  --fg: #e9e9ee;
+  --fg-muted: #9a9aa6;
+  --border: #232329;
+  --border-soft: #1a1a1f;
+  --accent: #6ea8fe;
+  --accent-soft: rgba(110, 168, 254, 0.12);
+  --container: 760px;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* ---- reset ---- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- a11y helpers ---- */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--accent);
+  color: #0a0a0d;
+  padding: 12px 18px;
+  border-radius: 0 0 6px 0;
+  z-index: 100;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ---- layout ---- */
+
+.section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  margin-bottom: 32px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-heading::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ---- header / nav ---- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 10, 13, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  padding: 18px 24px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.nav-links a {
+  color: var(--fg-muted);
+  transition: color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ---- hero ---- */
+
+.hero {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 96px 24px 72px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.hero-lede {
+  font-size: 1.1rem;
+  color: var(--fg-muted);
+  max-width: 56ch;
+  margin-bottom: 28px;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.hero-links a {
+  color: var(--fg);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.hero-links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---- entry list (experience / education) ---- */
+
+.entry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-bottom: 10px;
+}
+
+.entry-head h3 {
+  font-size: 1.05rem;
+}
+
+.entry-org {
+  font-size: 0.92rem;
+  color: var(--fg-muted);
+  margin-top: 2px;
+}
+
+.entry-meta {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+.entry-points {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.entry-points li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.entry-points li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ---- project cards ---- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-size: 1.02rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tags li {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.card > a {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.card > a:hover {
+  text-decoration: underline;
+}
+
+/* ---- research / papers ---- */
+
+.paper-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.paper a {
+  display: block;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-soft);
+  transition: opacity 0.15s ease;
+}
+
+.paper:last-child a {
+  border-bottom: none;
+}
+
+.paper a:hover h3 {
+  color: var(--accent);
+}
+
+.paper h3 {
+  font-size: 0.98rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+  margin-bottom: 6px;
+}
+
+.paper p {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+}
+
+/* ---- photo grid (moments) ---- */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.photo {
+  margin: 0;
+}
+
+.photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.photo img.portrait {
+  object-position: center 20%;
+}
+
+.photo:hover img,
+.photo:focus-within img {
+  border-color: var(--accent);
+  transform: scale(1.02);
+}
+
+.photo figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* ---- contact ---- */
+
+.contact-text {
+  font-size: 1.05rem;
+  color: var(--fg-muted);
+  max-width: 56ch;
+  margin-bottom: 24px;
+}
+
+.contact-email {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  margin-bottom: 28px;
+}
+
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.social-row a {
+  color: var(--fg-muted);
+  transition: color 0.15s ease;
+}
+
+.social-row a:hover {
+  color: var(--accent);
+}
+
+/* ---- footer ---- */
+
+.site-footer {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 30px 24px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--border);
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+/* ---- scroll reveal ----
+   .reveal is only hidden once script.js confirms JS is running (html.js).
+   no JS, no observer support, or JS error => content stays visible by default. */
+
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- motion preferences ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 860px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 56px 20px;
+  }
+
+  .nav {
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 72px 20px 56px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
