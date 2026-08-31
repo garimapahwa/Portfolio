@@ -3,45 +3,80 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  (function () {
+    try {
+      var theme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+    } catch (e) {}
+  })();
+</script>
 <title>Garima Pahwa — Software Engineer</title>
 <meta name="description" content="Garima Pahwa — Software Engineer at Becton Dickinson. Backend systems, microservices, and machine learning research." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
-  <nav class="nav" aria-label="Primary">
-    <a class="brand" href="#top">Garima Pahwa</a>
-    <ul class="nav-links">
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#moments">Moments</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<div class="top-bar" aria-hidden="true"></div>
+
+<nav class="sidebar-nav" aria-label="Primary">
+  <a class="sidebar-brand" href="#top">Garima Pahwa</a>
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#moments">Moments</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#thoughts">Thoughts</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+    <span class="theme-toggle-dark">dark mode.</span>
+    <span class="theme-toggle-light">light mode.</span>
+  </button>
+</nav>
 
 <main id="main">
 
   <section id="top" class="hero">
     <p class="eyebrow reveal">Software Engineer · Bangalore, India</p>
-    <h1 class="reveal">Garima Pahwa</h1>
+    <h1 class="hero-tag reveal">software.backend(<span>engineer</span>)<span class="cursor">_</span></h1>
     <p class="hero-lede reveal">
       I build backend systems and shared libraries across microservices at Becton Dickinson,
-      publish machine learning research on the side, and spend weekends organizing tech
-      communities and events.
+      publish machine learning research on the side, and organize tech communities on
+      weekends.
     </p>
+    <div class="community-highlight reveal" aria-label="Community highlight">
+      <p class="community-kicker">community.signal</p>
+      <p class="community-copy">
+        I host hackathons, mentor builders, and bring students and engineers into the same room
+        to make tech feel more open, practical, and fun.
+      </p>
+    </div>
     <div class="hero-links reveal">
-      <a href="mailto:pahwaginni96@gmail.com">Email</a>
-      <a href="https://github.com/garimapahwa" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://x.com/pahwaginni" target="_blank" rel="noreferrer">Twitter</a>
       <a href="https://www.linkedin.com/in/garima-pahwa-68416a22a/" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="https://leetcode.com/hello2355/" target="_blank" rel="noreferrer">LeetCode</a>
+      <a href="mailto:pahwaginni96@gmail.com">Email</a>
+    </div>
+
+    <div class="hero-widgets reveal">
+      <a class="widget-card" href="https://github.com/garimapahwa" target="_blank" rel="noreferrer">
+        <p class="widget-label">GitHub activity</p>
+        <svg class="gh-chart" width="100%" viewBox="0 0 689 107" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub contribution graph">
+        <text x="0" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Sep</text><text x="52" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Oct</text><text x="104" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Nov</text><text x="169" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Dec</text><text x="221" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Jan</text><text x="286" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Feb</text><text x="338" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Mar</text><text x="390" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Apr</text><text x="442" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">May</text><text x="507" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Jun</text><text x="559" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Jul</text><text x="611" y="10" font-size="9" fill="var(--fg-muted)" font-family="JetBrains Mono, monospace">Aug</text>
+        <rect x="0" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="0" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="0" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="0" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="0" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="0" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="0" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="13" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="13" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="13" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="13" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="13" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="13" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="13" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="26" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="26" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="26" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="26" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="26" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="26" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="26" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="39" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="39" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="39" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="39" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="39" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="39" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="39" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="52" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="52" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="52" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="52" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="52" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="52" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="52" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="65" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="65" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="65" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="65" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="65" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="65" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="65" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="78" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="78" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="78" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="78" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="78" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="78" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="78" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="91" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="91" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="91" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="91" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="91" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="91" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="91" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="104" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="104" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="104" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="104" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="104" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="104" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="104" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="117" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="117" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="117" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="117" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="117" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="117" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="117" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="130" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="130" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="130" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="130" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="130" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="130" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="130" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="143" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="143" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="143" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="143" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="143" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="143" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="143" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="156" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="156" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="156" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="156" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="156" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="156" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="156" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="169" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="169" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="169" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="169" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="169" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="169" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="169" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="182" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="182" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="182" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="182" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="182" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="182" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="182" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="195" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="195" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="195" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="195" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="195" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="195" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="195" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="208" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="208" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="208" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="208" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="208" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="208" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="208" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="221" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="221" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="221" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="221" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="221" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="221" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="221" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="234" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="234" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="234" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="234" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="234" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="234" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="234" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="247" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="247" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="247" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="247" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="247" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="247" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="247" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="260" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="260" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="260" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="260" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="260" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="260" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="260" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="273" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="273" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="273" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="273" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="273" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="273" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="273" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="286" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="286" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="286" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="286" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="286" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="286" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="286" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="299" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="299" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="299" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="299" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="299" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="299" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="299" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="312" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="312" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="312" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="312" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="312" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="312" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="312" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="325" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="325" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="325" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="325" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="325" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="325" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="325" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="338" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="338" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="338" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="338" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="338" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="338" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="338" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="351" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="351" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="351" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="351" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="351" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="351" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="351" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="364" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="364" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="364" y="42" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="364" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="364" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="364" y="81" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="364" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="377" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="377" y="29" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="377" y="42" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="377" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="377" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="377" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="377" y="94" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="390" y="16" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="390" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="390" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="390" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="390" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="390" y="81" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="390" y="94" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="403" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="403" y="29" width="10" height="10" rx="2" fill="var(--gh-level-3)"/><rect x="403" y="42" width="10" height="10" rx="2" fill="var(--gh-level-2)"/><rect x="403" y="55" width="10" height="10" rx="2" fill="var(--gh-level-4)"/><rect x="403" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="403" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="403" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="416" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="416" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="416" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="416" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="416" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="416" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="416" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="429" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="429" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="429" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="429" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="429" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="429" y="81" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="429" y="94" width="10" height="10" rx="2" fill="var(--gh-level-2)"/><rect x="442" y="16" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="442" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="442" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="442" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="442" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="442" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="442" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="455" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="455" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="455" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="455" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="455" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="455" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="455" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="468" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="468" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="468" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="468" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="468" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="468" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="468" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="481" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="481" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="481" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="481" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="481" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="481" y="81" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="481" y="94" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="494" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="494" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="494" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="494" y="55" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="494" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="494" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="494" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="507" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="507" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="507" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="507" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="507" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="507" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="507" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="520" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="520" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="520" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="520" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="520" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="520" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="520" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="533" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="533" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="533" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="533" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="533" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="533" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="533" y="94" width="10" height="10" rx="2" fill="var(--gh-level-2)"/><rect x="546" y="16" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="546" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="546" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="546" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="546" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="546" y="81" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="546" y="94" width="10" height="10" rx="2" fill="var(--gh-level-2)"/><rect x="559" y="16" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="559" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="559" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="559" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="559" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="559" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="559" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="572" y="16" width="10" height="10" rx="2" fill="var(--gh-level-2)"/><rect x="572" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="572" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="572" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="572" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="572" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="572" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="585" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="585" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="585" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="585" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="585" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="585" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="585" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="598" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="598" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="598" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="598" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="598" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="598" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="598" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="611" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="611" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="611" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="611" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="611" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="611" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="611" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="624" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="624" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="624" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="624" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="624" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="624" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="624" y="94" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="637" y="16" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="637" y="29" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="637" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="637" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="637" y="68" width="10" height="10" rx="2" fill="var(--gh-level-4)"/><rect x="637" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="637" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="650" y="16" width="10" height="10" rx="2" fill="var(--gh-level-1)"/><rect x="650" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="650" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="650" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="650" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="650" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="650" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="663" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="663" y="29" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="663" y="42" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="663" y="55" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="663" y="68" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="663" y="81" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="663" y="94" width="10" height="10" rx="2" fill="var(--gh-level-0)"/><rect x="676" y="16" width="10" height="10" rx="2" fill="var(--gh-level-0)"/>
+      </svg>
+      </a>
+      <a class="widget-card" href="https://leetcode.com/u/ginnipahwa05/" target="_blank" rel="noreferrer">
+        <p class="widget-label">LeetCode stats</p>
+        <p class="widget-solved">218 <span>solved</span></p>
+        <p class="widget-breakdown">101 Easy · 92 Medium · 25 Hard</p>
+      </a>
     </div>
   </section>
 
@@ -77,7 +112,7 @@
       <li class="entry reveal">
         <div class="entry-head">
           <div>
-            <h3>Program Handler</h3>
+            <h3>Student Coordinator Handler</h3>
             <p class="entry-org">Netflix × FICCI × Reskilll</p>
           </div>
           <p class="entry-meta">Oct 2024 — Dec 2024</p>
@@ -85,6 +120,183 @@
         <ul class="entry-points">
           <li>Managed the WAVES Summit trailer-making competition, coordinating 10,000+ participants.</li>
         </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="moments" class="section">
+    <h2 class="section-heading reveal">Moments</h2>
+    <p class="moments-intro reveal">A rolling tape of hackathons, community days, research wins, and the people behind them.</p>
+    <div class="moments-marquee reveal">
+      <div class="moments-track">
+        <figure class="moment-chip">
+          <img src="images/reel/push-to-prod-hackathon.jpg" alt="Push to Prod Hackathon" loading="lazy" />
+          <figcaption>Push to Prod Hackathon</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/my-time-with-netflix.jpg" alt="My Time with Netflix" loading="lazy" />
+          <figcaption>My Time with Netflix</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/build-india-hackathon.jpg" alt="Build India Hackathon" loading="lazy" />
+          <figcaption>Build India Hackathon</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/solana-ctf-25.jpg" alt="Solana CTF '25" loading="lazy" />
+          <figcaption>Solana CTF '25</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/waves-summit-organizer.jpg" alt="Organizer, WAVES Summit" loading="lazy" />
+          <figcaption>Organizer, WAVES Summit</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/ideathons.jpg" alt="Mentored Hackathons — iDEATHONS" loading="lazy" />
+          <figcaption>Mentored Hackathons — iDEATHONS</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/solana-ctf-26.jpg" alt="Solana CTF '26" loading="lazy" />
+          <figcaption>Solana CTF '26</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/graduated-igdtuw.jpg" alt="Graduated from IGDTUW" loading="lazy" />
+          <figcaption>Graduated from IGDTUW</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/podcast.jpg" alt="Podcast Production" loading="lazy" />
+          <figcaption>Podcast Production</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/agentic-ethereum-hackathon.jpg" alt="Agentic Ethereum Hackathon" loading="lazy" />
+          <figcaption>Agentic Ethereum Hackathon</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/met-satya-nadella.jpg" alt="Met Satya Nadella" loading="lazy" />
+          <figcaption>Met Satya Nadella</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/cricket-captain.jpg" alt="Winning Cricket Team Captain" loading="lazy" />
+          <figcaption>Winning Cricket Team Captain</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/bhangrathon.jpg" alt="Hosted Bhangrathon (60 Participants)" loading="lazy" />
+          <figcaption>Hosted Bhangrathon (60 Participants)</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/community-event.jpg" alt="Community Event — Arpit, Sunny &amp; Ankush" loading="lazy" />
+          <figcaption>Community Event — Arpit, Sunny &amp; Ankush</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/got-my-degree.jpg" alt="Received My Degree" loading="lazy" />
+          <figcaption>Received My Degree</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/mentored-students.jpg" alt="Mentored Students" loading="lazy" />
+          <figcaption>Mentored Students</figcaption>
+        </figure>
+      </div>
+      <div class="moments-track" aria-hidden="true">
+        <figure class="moment-chip">
+          <img src="images/reel/push-to-prod-hackathon.jpg" alt="" loading="lazy" />
+          <figcaption>Push to Prod Hackathon</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/my-time-with-netflix.jpg" alt="" loading="lazy" />
+          <figcaption>My Time with Netflix</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/build-india-hackathon.jpg" alt="" loading="lazy" />
+          <figcaption>Build India Hackathon</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/solana-ctf-25.jpg" alt="" loading="lazy" />
+          <figcaption>Solana CTF '25</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/waves-summit-organizer.jpg" alt="" loading="lazy" />
+          <figcaption>Organizer, WAVES Summit</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/ideathons.jpg" alt="" loading="lazy" />
+          <figcaption>Mentored Hackathons — iDEATHONS</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/solana-ctf-26.jpg" alt="" loading="lazy" />
+          <figcaption>Solana CTF '26</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/graduated-igdtuw.jpg" alt="" loading="lazy" />
+          <figcaption>Graduated from IGDTUW</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/podcast.jpg" alt="" loading="lazy" />
+          <figcaption>Podcast Production</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/agentic-ethereum-hackathon.jpg" alt="" loading="lazy" />
+          <figcaption>Agentic Ethereum Hackathon</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/met-satya-nadella.jpg" alt="" loading="lazy" />
+          <figcaption>Met Satya Nadella</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/cricket-captain.jpg" alt="" loading="lazy" />
+          <figcaption>Winning Cricket Team Captain</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/bhangrathon.jpg" alt="" loading="lazy" />
+          <figcaption>Hosted Bhangrathon (60 Participants)</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img src="images/reel/community-event.jpg" alt="" loading="lazy" />
+          <figcaption>Community Event — Arpit, Sunny &amp; Ankush</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/got-my-degree.jpg" alt="" loading="lazy" />
+          <figcaption>Received My Degree</figcaption>
+        </figure>
+        <figure class="moment-chip">
+          <img class="portrait" src="images/reel/mentored-students.jpg" alt="" loading="lazy" />
+          <figcaption>Mentored Students</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2 class="section-heading reveal">Projects</h2>
+    <ol class="entry-list">
+      <li class="entry reveal">
+        <div class="entry-head">
+          <h3>Ingrid</h3>
+          <a class="entry-link" href="https://github.com/singhalshreya/Polaroid_Ingrid" target="_blank" rel="noreferrer">View here →</a>
+        </div>
+        <p class="entry-desc">A 3D rental platform combining a chatbot, backend, and a Unity AR/VR app for remote property tours.</p>
+        <p class="entry-tags">AR/VR · Unity · Chatbot</p>
+      </li>
+      <li class="entry reveal">
+        <div class="entry-head">
+          <h3>Distributed Incident War Room</h3>
+          <a class="entry-link" href="https://github.com/garimapahwa/Meta-PyTorch" target="_blank" rel="noreferrer">View here →</a>
+        </div>
+        <p class="entry-desc">An OpenEnv environment simulating real SRE incident response, where an AI agent monitors, diagnoses, and resolves issues across microservices.</p>
+        <p class="entry-tags">OpenEnv · AI Agents · SRE</p>
+      </li>
+      <li class="entry reveal">
+        <div class="entry-head">
+          <h3>WhatsApp × Notion Assistant</h3>
+          <a class="entry-link" href="https://github.com/garimapahwa/Notion-AI---MLH" target="_blank" rel="noreferrer">View here →</a>
+        </div>
+        <p class="entry-desc">An autonomous assistant that converts WhatsApp messages into Notion tasks and reminders.</p>
+        <p class="entry-tags">WhatsApp API · Twilio · Notion API</p>
+      </li>
+      <li class="entry reveal">
+        <div class="entry-head">
+          <h3>Pind Radio</h3>
+          <a class="entry-link" href="https://punjabiagyeoye.vercel.app/" target="_blank" rel="noreferrer">View here →</a>
+        </div>
+        <p class="entry-desc">A minimal browser-based Punjabi music radio — one page, one play button, a live listener count, and a continuous stream of the songs that soundtrack home.</p>
+        <p class="entry-tags">Web Audio · Realtime · Radio</p>
       </li>
     </ol>
   </section>
@@ -127,44 +339,6 @@
     </ol>
   </section>
 
-  <section id="projects" class="section">
-    <h2 class="section-heading reveal">Projects</h2>
-    <div class="card-grid">
-      <article class="card reveal">
-        <h3>Ingrid</h3>
-        <p>A 3D rental platform combining a chatbot, backend, and a Unity AR/VR app for remote property tours.</p>
-        <ul class="tags">
-          <li>AR/VR</li><li>Unity</li><li>Chatbot</li>
-        </ul>
-        <a href="https://github.com/singhalshreya/Polaroid_Ingrid" target="_blank" rel="noreferrer">View here →</a>
-      </article>
-      <article class="card reveal">
-        <h3>Distributed Incident War Room</h3>
-        <p>An OpenEnv environment simulating real SRE incident response, where an AI agent monitors, diagnoses, and resolves issues across microservices.</p>
-        <ul class="tags">
-          <li>OpenEnv</li><li>AI Agents</li><li>SRE</li>
-        </ul>
-        <a href="https://github.com/garimapahwa/Meta-PyTorch" target="_blank" rel="noreferrer">View here →</a>
-      </article>
-      <article class="card reveal">
-        <h3>WhatsApp × Notion Assistant</h3>
-        <p>An autonomous assistant that converts WhatsApp messages into Notion tasks and reminders.</p>
-        <ul class="tags">
-          <li>WhatsApp API</li><li>Twilio</li><li>Notion API</li>
-        </ul>
-        <a href="https://github.com/garimapahwa/Notion-AI---MLH" target="_blank" rel="noreferrer">View here →</a>
-      </article>
-      <article class="card reveal">
-        <h3>Pind Radio</h3>
-        <p>A minimal browser-based Punjabi music radio — one page, one play button, a live listener count, and a continuous stream of the songs that soundtrack home.</p>
-        <ul class="tags">
-          <li>Web Audio</li><li>Realtime</li><li>Radio</li>
-        </ul>
-        <a href="https://punjabiagyeoye.vercel.app/" target="_blank" rel="noreferrer">View here →</a>
-      </article>
-    </div>
-  </section>
-
   <section id="research" class="section">
     <h2 class="section-heading reveal">Research</h2>
     <ul class="paper-list">
@@ -195,75 +369,24 @@
     </ul>
   </section>
 
-  <section id="moments" class="section">
-    <h2 class="section-heading reveal">Moments</h2>
-    <div class="photo-grid">
-      <figure class="photo reveal">
-        <img src="images/reel/push-to-prod-hackathon.jpg" alt="Push to Prod Hackathon" loading="lazy" />
-        <figcaption>Push to Prod Hackathon</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img class="portrait" src="images/reel/my-time-with-netflix.jpg" alt="My Time with Netflix" loading="lazy" />
-        <figcaption>My Time with Netflix</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img class="portrait" src="images/reel/build-india-hackathon.jpg" alt="Build India Hackathon" loading="lazy" />
-        <figcaption>Build India Hackathon</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img src="images/reel/solana-ctf-25.jpg" alt="Solana CTF '25" loading="lazy" />
-        <figcaption>Solana CTF '25</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img class="portrait" src="images/reel/waves-summit-organizer.jpg" alt="Organizer, WAVES Summit" loading="lazy" />
-        <figcaption>Organizer, WAVES Summit</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img src="images/reel/ideathons.jpg" alt="Mentored Hackathons — iDEATHONS" loading="lazy" />
-        <figcaption>Mentored Hackathons — iDEATHONS</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img src="images/reel/solana-ctf-26.jpg" alt="Solana CTF '26" loading="lazy" />
-        <figcaption>Solana CTF '26</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img class="portrait" src="images/reel/graduated-igdtuw.jpg" alt="Graduated from IGDTUW" loading="lazy" />
-        <figcaption>Graduated from IGDTUW</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img class="portrait" src="images/reel/podcast.jpg" alt="Podcast Production" loading="lazy" />
-        <figcaption>Podcast Production</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img src="images/reel/agentic-ethereum-hackathon.jpg" alt="Agentic Ethereum Hackathon" loading="lazy" />
-        <figcaption>Agentic Ethereum Hackathon</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img class="portrait" src="images/reel/met-satya-nadella.jpg" alt="Met Satya Nadella" loading="lazy" />
-        <figcaption>Met Satya Nadella</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img src="images/reel/cricket-captain.jpg" alt="Winning Cricket Team Captain" loading="lazy" />
-        <figcaption>Winning Cricket Team Captain</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img src="images/reel/bhangrathon.jpg" alt="Hosted Bhangrathon (60 Participants)" loading="lazy" />
-        <figcaption>Hosted Bhangrathon (60 Participants)</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img src="images/reel/community-event.jpg" alt="Community Event — Arpit, Sunny &amp; Ankush" loading="lazy" />
-        <figcaption>Community Event — Arpit, Sunny &amp; Ankush</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img class="portrait" src="images/reel/got-my-degree.jpg" alt="Received My Degree" loading="lazy" />
-        <figcaption>Received My Degree</figcaption>
-      </figure>
-      <figure class="photo reveal">
-        <img class="portrait" src="images/reel/mentored-students.jpg" alt="Mentored Students" loading="lazy" />
-        <figcaption>Mentored Students</figcaption>
-      </figure>
-    </div>
+  <section id="thoughts" class="section">
+    <h2 class="section-heading reveal">Thoughts</h2>
+    <ul class="paper-list">
+      <li class="paper reveal">
+        <a href="https://medium.com/kestra-engineering/i-replaced-a-forgotten-cron-script-with-a-kestra-duckdb-pipeline-heres-what-actually-happened-f69e8529ee4b?sharedUserId=pahwaginni96" target="_blank" rel="noreferrer">
+          <h3>I Replaced a Forgotten Cron Script With a Kestra + DuckDB Pipeline — Here's What Actually Happened</h3>
+          <p>Kestra Engineering</p>
+        </a>
+      </li>
+      <li class="paper reveal">
+        <a href="https://medium.com/@pahwaginni96/made-bangalore-extra-crazy-01b71454c568?sharedUserId=pahwaginni96" target="_blank" rel="noreferrer">
+          <h3>Made Bangalore Extra Crazy</h3>
+          <p>Personal Medium</p>
+        </a>
+      </li>
+    </ul>
   </section>
+
 
   <section id="contact" class="section">
     <h2 class="section-heading reveal">Contact</h2>
@@ -273,9 +396,10 @@
     </p>
     <a class="contact-email reveal" href="mailto:pahwaginni96@gmail.com">pahwaginni96@gmail.com</a>
     <ul class="social-row reveal">
+      <li><a href="https://x.com/pahwaginni" target="_blank" rel="noreferrer">Twitter</a></li>
       <li><a href="https://github.com/garimapahwa" target="_blank" rel="noreferrer">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/garima-pahwa-68416a22a/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-      <li><a href="https://leetcode.com/hello2355/" target="_blank" rel="noreferrer">LeetCode</a></li>
+      <li><a href="https://leetcode.com/u/ginnipahwa05/" target="_blank" rel="noreferrer">LeetCode</a></li>
     </ul>
   </section>
 
