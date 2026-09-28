@@ -1,0 +1,73 @@
+:root {
+  /* One plain typeface everywhere */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --maxw: 1180px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --nav-h: 64px;
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+/* Strictly black & white: every colour below is a neutral grey. */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f5f5f3;
+  --bg-raised: #ffffff;
+  --bg-sunk: #ececea;
+  --fg: #1a1a1a;
+  --fg-muted: #454545;
+  --fg-faint: #6a6a6a;
+  --rule: rgba(26, 26, 26, 0.12);
+  --rule-strong: rgba(26, 26, 26, 0.28);
+
+  --line: #1a1a1a; /* ink for dashed rules, outlines and handwriting */
+  --accent: #1a1a1a; /* small emphasised text */
+  --accent-fill: #1a1a1a; /* ink buttons */
+  --on-accent: #f5f5f3;
+  --accent-soft: #ececea; /* quiet grey wash */
+  --on-accent-soft: #1a1a1a;
+  --highlight: #d9d9d6; /* grey marker stroke */
+
+  --tone-1: #ececea; /* light fill in doodles and cards */
+  --tone-2: #d9d9d6;
+
+  --heat-0: #e8e8e6;
+  --heat-1: #c6c6c3;
+  --heat-2: #969693;
+  --heat-3: #5c5c5c;
+  --heat-4: #1a1a1a;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121212;
+  --bg-raised: #1c1c1c;
+  --bg-sunk: #0d0d0d;
+  --fg: #f0f0ee;
+  --fg-muted: #c8c8c6;
+  --fg-faint: #9a9a98;
+  --rule: rgba(240, 240, 238, 0.12);
+  --rule-strong: rgba(240, 240, 238, 0.3);
+
+  --line: #f0f0ee;
+  --accent: #f0f0ee;
+  --accent-fill: #f0f0ee;
+  --on-accent: #121212;
+  --accent-soft: #262626;
+  --on-accent-soft: #f0f0ee;
+  --highlight: #3a3a3a;
+
+  --tone-1: #262626;
+  --tone-2: #333333;
+
+  --heat-0: #242424;
+  --heat-1: #3d3d3d;
+  --heat-2: #6a6a6a;
+  --heat-3: #a8a8a6;
+  --heat-4: #f0f0ee;
+}

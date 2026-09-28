@@ -1,0 +1,74 @@
+/* Compact intro at the top of the home page, right above the windows */
+.hero {
+  padding-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* ---- text ---- */
+
+.hero__hello {
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+}
+
+.hero__name {
+  margin: 0.1rem 0 0.6rem;
+  font: 600 clamp(1.8rem, 3.5vw, 2.5rem) / 1.1 var(--font-sans);
+  color: var(--line);
+  letter-spacing: 0.005em;
+}
+
+.hero__char {
+  display: inline-block;
+  animation: char-pop 0.8s var(--ease) both;
+  animation-delay: calc(var(--i) * 45ms + 100ms);
+}
+
+@keyframes char-pop {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em) rotate(-8deg);
+  }
+}
+
+.hero__role {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.6rem;
+  color: var(--fg-faint);
+}
+
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin-top: 0.9rem;
+}
+
+.hero__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.hero__links a:hover,
+.hero__links a:focus-visible {
+  color: var(--fg);
+  border-bottom-color: currentColor;
+}
+
+.hero__arrow {
+  display: inline-block;
+  transition: transform 0.35s var(--ease);
+}
+
+.hero__links a:hover .hero__arrow {
+  transform: translate(2px, -2px);
+}

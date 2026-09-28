@@ -1,0 +1,137 @@
+.exp {
+  border-top: 2px dashed color-mix(in srgb, var(--line) 55%, transparent);
+}
+
+.exp__item {
+  position: relative;
+  display: grid;
+  gap: 1.1rem;
+  padding-block: clamp(1.5rem, 3.5vw, 2.25rem);
+  border-bottom: 1px dashed var(--rule-strong);
+  isolation: isolate;
+}
+
+/* Soft pink wash that sweeps in on hover */
+.exp__item::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(var(--gutter) * -0.5);
+  z-index: -1;
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  opacity: 0;
+  transform: scaleX(0.96);
+  transition:
+    opacity 0.4s var(--ease),
+    transform 0.5s var(--ease);
+}
+
+.exp__item:hover::before {
+  opacity: 0.6;
+  transform: none;
+}
+
+.exp__when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  font-size: 0.72rem;
+  color: var(--fg-faint);
+}
+
+.exp__index {
+  font: 600 0.75rem/1 var(--font-sans);
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+.exp__now {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--accent-fill);
+  color: var(--on-accent);
+}
+
+.exp__now-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 1.8s var(--ease-in-out) infinite;
+}
+
+.exp__role {
+  font: 600 clamp(1.15rem, 1.6vw, 1.35rem) / 1.25 var(--font-sans);
+  transition: color 0.3s var(--ease);
+}
+
+.exp__item:hover .exp__role {
+  color: var(--accent);
+}
+
+.exp__org {
+  margin-top: 0.3rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+
+.exp__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.9rem;
+  font-size: 0.62rem;
+}
+
+.exp__stack li {
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--on-accent-soft);
+}
+
+.exp__points {
+  display: grid;
+  gap: 0.7rem;
+  color: var(--fg-muted);
+}
+
+.exp__points li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.exp__points li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.62em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 1.5px solid var(--line);
+  border-radius: 50%;
+  transition: background-color 0.3s var(--ease);
+}
+
+.exp__item:hover .exp__points li::before {
+  background: var(--line);
+}
+
+@media (min-width: 900px) {
+  .exp__item {
+    grid-template-columns: 2fr 4.5fr 5.5fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .exp__when {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0.4rem;
+  }
+}
