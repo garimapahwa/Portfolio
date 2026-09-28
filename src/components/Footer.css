@@ -13,8 +13,8 @@
 }
 
 .footer__heart {
-  width: 1.4rem;
-  fill: var(--line);
+  display: inline-block;
+  font-weight: 500;
   animation: beat 1.6s var(--ease-in-out) infinite;
 }
 

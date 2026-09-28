@@ -33,7 +33,7 @@ export default function Hero() {
         <Reveal as="p" className="hero__role meta" delay={3}>
           <span>{profile.role}</span>
           <span aria-hidden="true">·</span>
-          <span>{profile.company}</span>
+          <span>{profile.focus}</span>
           <span aria-hidden="true">·</span>
           <span>
             {profile.location}, <time>{time}</time> IST
