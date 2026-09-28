@@ -43,7 +43,7 @@ export default function Log() {
                 </span>
                 <span className="entry__text">{e.text}</span>
                 <span className="entry__cta meta">
-                  {cta(e.type)} <span aria-hidden="true">↗</span>
+                  {cta(e.type)} <span aria-hidden="true">↗︎</span>
                 </span>
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
@@ -52,7 +52,7 @@ export default function Log() {
         </ul>
 
         <a className="log__more" href={socials.twitter.href} target="_blank" rel="noreferrer">
-          More demos & posts on X <span aria-hidden="true">↗</span>
+          More demos & posts on X <span aria-hidden="true">↗︎</span>
           <span className="sr-only"> (opens in a new tab)</span>
         </a>
       </div>

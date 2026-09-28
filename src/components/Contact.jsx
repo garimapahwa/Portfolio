@@ -55,7 +55,7 @@ export default function Contact() {
                     <span className="contact__label">{s.label}</span>
                     <span className="contact__handle meta">{s.handle}</span>
                     <span className="contact__arrow" aria-hidden="true">
-                      ↗
+                      ↗︎
                     </span>
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
