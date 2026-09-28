@@ -23,7 +23,7 @@ export default function Research() {
                   <span>{paper.publisher}</span>
                 </div>
                 <span className="paper__arrow" aria-hidden="true">
-                  ↗
+                  ↗︎
                 </span>
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>

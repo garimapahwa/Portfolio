@@ -6,7 +6,7 @@ export default function LeetCodeStats() {
     <a className="widget lc" href={socials.leetcode.href} target="_blank" rel="noreferrer">
       <p className="widget__label meta">
         <span>LeetCode</span>
-        <span aria-hidden="true">↗</span>
+        <span aria-hidden="true">↗︎</span>
       </p>
       <p className="lc__total">
         {leetcode.solved}

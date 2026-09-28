@@ -31,12 +31,11 @@ export default function Hero() {
         </h1>
 
         <Reveal as="p" className="hero__role meta" delay={3}>
-          <span>{profile.role}</span>
-          <span aria-hidden="true">·</span>
-          <span>{profile.focus}</span>
-          <span aria-hidden="true">·</span>
-          <span>
-            {profile.location}, <time>{time}</time> IST
+          <span className="hero__role-group">
+            {profile.role} <span aria-hidden="true">·</span> {profile.focus}
+          </span>
+          <span className="hero__role-group">
+            {profile.location} <span aria-hidden="true">·</span> <time>{time}</time> IST
           </span>
         </Reveal>
 
@@ -47,9 +46,9 @@ export default function Hero() {
             return (
               <li key={key}>
                 <a href={s.href} {...(external && { target: "_blank", rel: "noreferrer" })}>
-                  {s.label}
+                  {s.short ?? s.label}
                   <span className="hero__arrow" aria-hidden="true">
-                    ↗
+                    ↗︎
                   </span>
                   {external && <span className="sr-only"> (opens in a new tab)</span>}
                 </a>

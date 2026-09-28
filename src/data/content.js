@@ -19,7 +19,7 @@ export const socials = {
     href: "https://www.linkedin.com/in/garima-pahwa-68416a22a/",
   },
   github: { label: "GitHub", handle: "@garimapahwa", href: "https://github.com/garimapahwa" },
-  twitter: { label: "Twitter / X", handle: "@pahwaginni", href: "https://x.com/pahwaginni" },
+  twitter: { label: "Twitter / X", short: "X", handle: "@pahwaginni", href: "https://x.com/pahwaginni" },
   telegram: { label: "Telegram", handle: "@ginnipahwa", href: "https://t.me/ginnipahwa" },
   leetcode: { label: "LeetCode", handle: "ginnipahwa05", href: "https://leetcode.com/u/ginnipahwa05/" },
   email: { label: "Email", handle: "pahwaginni96@gmail.com", href: "mailto:pahwaginni96@gmail.com" },

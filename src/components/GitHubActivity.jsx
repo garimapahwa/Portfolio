@@ -64,7 +64,7 @@ export default function GitHubActivity() {
             </>
           )}
           {state.status === "loading" && "Loading…"}
-          {state.status === "error" && "View profile ↗"}
+          {state.status === "error" && "View profile ↗︎"}
         </span>
       </p>
 

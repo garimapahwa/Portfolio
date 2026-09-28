@@ -39,7 +39,7 @@ export default function Projects() {
                       {p.link.label}
                       <span className="sr-only">: {p.title} (opens in a new tab)</span>
                       <span className="project__arrow" aria-hidden="true">
-                        ↗
+                        ↗︎
                       </span>
                     </a>
                   </span>

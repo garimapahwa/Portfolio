@@ -34,7 +34,7 @@
 .board__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem clamp(1rem, 3vw, 1.5rem);
+  gap: 1.75rem 1rem;
   align-items: start;
 }
 
@@ -42,9 +42,7 @@
   margin-top: var(--y, 0);
 }
 
-.board__item:nth-child(even) {
-  --y: 2.5rem;
-}
+/* Phones get a tidy, unstaggered grid; the stagger starts on wider screens */
 
 @media (min-width: 640px) {
   .board__grid {
@@ -233,6 +231,7 @@
 /* ---- margin doodle ---- */
 
 .board__plane {
+  display: none;
   position: absolute;
   top: -0.5rem;
   right: var(--gutter);
@@ -251,5 +250,11 @@
   }
   to {
     transform: translate(-14px, 8px) rotate(4deg);
+  }
+}
+
+@media (min-width: 640px) {
+  .board__plane {
+    display: block;
   }
 }
