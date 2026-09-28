@@ -8,9 +8,6 @@ export default function Nav({ route }) {
     <header className="nav">
       <div className="nav__inner container">
         <a className="nav__brand" href="#/" aria-current={route === "home" ? "page" : undefined}>
-          <span className="nav__mark" aria-hidden="true">
-            gp
-          </span>
           <span className="nav__name">
             {profile.firstName} {profile.lastName}
           </span>

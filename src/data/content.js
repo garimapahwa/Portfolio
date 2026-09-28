@@ -4,7 +4,7 @@ export const profile = {
   firstName: "Garima",
   lastName: "Pahwa",
   role: "Software Engineer",
-  company: "Becton Dickinson",
+  focus: "Community",
   location: "Bangalore, India",
   coords: "12.97° N, 77.59° E",
   timeZone: "Asia/Kolkata",
