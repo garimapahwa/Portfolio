@@ -1,0 +1,316 @@
+/* One big, one small, alternating row by row (wide+narrow, then narrow+wide) —
+   a pattern that repeats for any number of projects. Heights stay compact. */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Scroll-reveal lives on the cell; hover motion lives on the card, so the two transforms never fight. */
+.projects__cell {
+  grid-column: 1 / -1;
+  display: flex;
+}
+
+@media (min-width: 760px) {
+  .projects__cell:nth-child(4n + 1),
+  .projects__cell:nth-child(4n) {
+    grid-column: span 7;
+  }
+
+  .projects__cell:nth-child(4n + 2),
+  .projects__cell:nth-child(4n + 3) {
+    grid-column: span 5;
+  }
+
+  /* An odd one out at the end takes the full row, so there's never an empty gap */
+  .projects__cell:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+.project {
+  --card-bg: var(--bg-raised);
+  --card-fg: var(--fg);
+  --card-muted: var(--fg-muted);
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.1rem;
+  background: var(--card-bg);
+  color: var(--card-fg);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  outline: 2px dashed transparent;
+  outline-offset: 5px;
+  transition:
+    transform 0.35s var(--ease),
+    outline-color 0.3s var(--ease);
+}
+
+.project:hover,
+.project:focus-within {
+  transform: translateY(-3px);
+  outline-color: var(--line);
+}
+
+/* Card fills echo the doodles' shading */
+.project--gray {
+  --card-bg: var(--tone-1);
+  --card-muted: var(--fg);
+  border-color: transparent;
+}
+
+.project--lined {
+  background-image: repeating-linear-gradient(-45deg, transparent 0 9px, var(--rule) 9px 10px);
+}
+
+.project--dark {
+  --card-bg: var(--fg);
+  --card-fg: var(--bg);
+  --card-muted: var(--bg);
+  border-color: transparent;
+}
+
+.project__top {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.64rem;
+  color: var(--card-muted);
+}
+
+.project__title {
+  margin-top: 0.8rem;
+  font: 600 1.05rem/1.3 var(--font-sans);
+}
+
+.project__desc {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--card-muted);
+}
+
+.project--dark .project__desc {
+  opacity: 0.85;
+}
+
+.project__foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+}
+
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  font-size: 0.58rem;
+}
+
+.project__tags li {
+  padding: 0.2rem 0.45rem;
+  border: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+  border-radius: 999px;
+}
+
+.project__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.64rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s var(--ease);
+}
+
+.project:hover .project__link {
+  border-bottom-color: currentColor;
+}
+
+.project__links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+/* Secondary link sits above the card-wide click area so it stays clickable on its own */
+.project__source {
+  position: relative;
+  z-index: 1;
+  font-size: 0.64rem;
+  opacity: 0.7;
+  border-bottom: 1px solid transparent;
+  transition:
+    opacity 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.project__source:hover,
+.project__source:focus-visible {
+  opacity: 1;
+  border-bottom-color: currentColor;
+}
+
+/* Whole card is clickable via the main link's pseudo-element */
+.project__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.project__link:focus-visible {
+  outline: none;
+}
+
+.project__arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
+}
+
+.project:hover .project__arrow {
+  transform: translate(2px, -2px);
+}
+
+/* The big cards: a touch taller, with a larger icon and title */
+@media (min-width: 760px) {
+  .projects__cell:nth-child(4n + 1) .project,
+  .projects__cell:nth-child(4n) .project {
+    min-height: 14rem;
+    padding: 1.25rem 1.4rem;
+  }
+
+  .projects__cell:nth-child(4n + 1) .motif,
+  .projects__cell:nth-child(4n) .motif {
+    width: 3.5rem;
+  }
+
+  .projects__cell:nth-child(4n + 1) .project__title,
+  .projects__cell:nth-child(4n) .project__title {
+    font-size: 1.35rem;
+  }
+}
+
+/* ---- motifs ---- */
+
+.motif {
+  flex: none;
+  width: 2.5rem;
+  color: var(--line);
+}
+
+.project--dark .motif {
+  color: currentColor;
+}
+
+.motif svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.motif__frame {
+  stroke-dasharray: 6 5;
+}
+
+.motif__spin {
+  transform-origin: 60px 60px;
+  transition: transform 0.9s var(--ease);
+}
+
+.project:hover .motif__spin {
+  transform: rotate(-12deg) scale(1.06);
+}
+
+.motif__dash {
+  stroke-dasharray: 3 4;
+  opacity: 0.6;
+}
+
+.motif__grid {
+  opacity: 0.3;
+  stroke-dasharray: 2 5;
+}
+
+.motif__trace {
+  stroke-width: 2.2;
+  stroke-dasharray: 100;
+  animation: trace 3.2s linear infinite;
+}
+
+@keyframes trace {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.motif__blip {
+  fill: currentColor;
+  animation: blink 1.2s var(--ease-in-out) infinite;
+}
+
+.motif__arrow {
+  stroke-dasharray: 4 4;
+  transition: transform 0.5s var(--ease);
+}
+
+.project:hover .motif__arrow {
+  transform: translateX(6px);
+}
+
+.motif rect {
+  rx: 6px;
+}
+
+.motif__check {
+  stroke-width: 3;
+  stroke-dasharray: 100;
+}
+
+.project:hover .motif__check {
+  animation: draw 0.7s var(--ease) 0.1s both;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 100;
+  }
+}
+
+.motif__core {
+  fill: currentColor;
+  stroke: none;
+}
+
+.motif__wave {
+  transform-box: fill-box;
+  transform-origin: center;
+  stroke-dasharray: 5 5;
+  animation: wave 3s var(--ease) infinite;
+}
+
+@keyframes wave {
+  from {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}

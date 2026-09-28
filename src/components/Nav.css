@@ -1,0 +1,114 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  transition: background-color 0.4s var(--ease);
+}
+
+.nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: var(--nav-h);
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav__mark {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  font: 600 0.8rem/1 var(--font-sans);
+  letter-spacing: 0.02em;
+  border-radius: 50%;
+  background: var(--accent-fill);
+  color: var(--on-accent);
+  transition: transform 0.5s var(--ease);
+}
+
+.nav__brand:hover .nav__mark {
+  transform: rotate(-12deg);
+}
+
+.nav__name {
+  font: 600 1rem/1 var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0;
+  font-size: 0.68rem;
+  color: var(--fg-muted);
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--fg);
+  border-bottom-color: currentColor;
+}
+
+.theme-toggle__orb {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  background: linear-gradient(90deg, currentColor 50%, transparent 50%);
+  transition: transform 0.6s var(--ease);
+}
+
+:root[data-theme="dark"] .theme-toggle__orb {
+  transform: rotate(180deg);
+}
+
+/* Scroll progress: a dashed ink line that fills as you read */
+.nav__progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 1;
+  border-bottom: 2px dashed var(--line);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@supports (animation-timeline: scroll()) {
+  .nav__progress {
+    animation: nav-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes nav-progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle__label {
+    display: none;
+  }
+}

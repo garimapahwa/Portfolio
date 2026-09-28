@@ -1,0 +1,129 @@
+/* ---- filters (appear once there are demos, posts and writing to switch between) ---- */
+
+.log__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.log__filter {
+  padding: 0.15rem 0;
+  font-size: 0.7rem;
+  color: var(--fg-faint);
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.log__filter:hover,
+.log__filter[aria-pressed="true"] {
+  color: var(--fg);
+  border-bottom-color: currentColor;
+}
+
+/* ---- entries: small ruled-paper slips that fill the row, whatever the count ---- */
+
+.log {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+}
+
+.log__cell {
+  display: flex;
+}
+
+.entry {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 1.1rem 1rem 2.4rem;
+  background-color: var(--bg-raised);
+  background-image: repeating-linear-gradient(to bottom, transparent 0 27px, var(--rule) 27px 28px);
+  background-position: 0 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  outline: 2px dashed transparent;
+  outline-offset: 5px;
+  transition:
+    transform 0.35s var(--ease),
+    outline-color 0.3s var(--ease);
+}
+
+/* Notebook margin line */
+.entry::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.5rem;
+  border-left: 1.5px dashed var(--rule-strong);
+}
+
+.entry:hover,
+.entry:focus-visible {
+  transform: translateY(-3px);
+  outline-color: var(--line);
+}
+
+.entry__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.6rem;
+  color: var(--fg-faint);
+}
+
+.entry__type {
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: var(--accent-fill);
+  color: var(--on-accent);
+}
+
+.entry__text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.entry__cta {
+  margin-top: auto;
+  font-size: 0.64rem;
+  color: var(--fg-muted);
+}
+
+.entry__cta span {
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
+}
+
+.entry:hover .entry__cta span {
+  transform: translate(2px, -2px);
+}
+
+/* ---- link to everything else on X ---- */
+
+.log__more {
+  display: inline-flex;
+  gap: 0.3rem;
+  margin-top: 1.5rem;
+  padding: 0.15rem 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.log__more:hover,
+.log__more:focus-visible {
+  color: var(--fg);
+  border-bottom-color: currentColor;
+}

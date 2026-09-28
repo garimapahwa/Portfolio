@@ -1,0 +1,55 @@
+.footer {
+  margin-top: clamp(4.5rem, 10vw, 7rem);
+  border-top: 2px dashed color-mix(in srgb, var(--line) 55%, transparent);
+}
+
+.footer__sign {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
+  font: 600 clamp(1.3rem, 2.5vw, 1.7rem) / 1.1 var(--font-sans);
+  color: var(--line);
+}
+
+.footer__heart {
+  width: 1.4rem;
+  fill: var(--line);
+  animation: beat 1.6s var(--ease-in-out) infinite;
+}
+
+@keyframes beat {
+  20% {
+    transform: scale(1.18);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.footer__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding-block: 1.25rem 2rem;
+  font-size: 0.68rem;
+  color: var(--fg-faint);
+}
+
+.footer__top {
+  color: var(--fg);
+}
+
+.footer__top:hover {
+  color: var(--accent);
+}
+
+.footer__top span {
+  display: inline-block;
+  transition: transform 0.35s var(--ease);
+}
+
+.footer__top:hover span {
+  transform: translateY(-3px);
+}

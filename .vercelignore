@@ -1,6 +1,7 @@
 .clang-module-cache
 .swift-module-cache
 .DS_Store
-images/*
-!images/reel
-!images/reel/**
+images
+legacy
+node_modules
+dist

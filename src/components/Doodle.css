@@ -1,0 +1,73 @@
+.doodle {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.doodle__paper {
+  fill: var(--bg-raised);
+}
+
+.doodle__ink {
+  fill: none;
+  stroke: var(--fg);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.doodle__frame {
+  stroke-width: 2.4;
+}
+
+.doodle__frame--echo {
+  stroke-width: 1.2;
+  opacity: 0.45;
+}
+
+.doodle__ink .ink-fill {
+  fill: var(--fg);
+  stroke: none;
+}
+
+.doodle__ink .dashed {
+  stroke-dasharray: 5 4;
+}
+
+.doodle__ink .thick {
+  stroke-width: 4;
+}
+
+/* Shading printed slightly off-register, like a riso print — in black & white */
+.doodle__spots {
+  transition: transform 0.5s var(--ease);
+}
+
+.spot--dots {
+  fill: url(#dots);
+}
+
+.spot--hatch {
+  fill: url(#hatch);
+}
+
+.spot--tone {
+  fill: var(--tone-2);
+}
+
+.pattern-ink {
+  stroke: var(--fg);
+  stroke-width: 1.4;
+  opacity: 0.7;
+}
+
+.pattern-dot {
+  fill: var(--fg);
+  opacity: 0.6;
+}
+
+.doodle .bob {
+  transform-box: fill-box;
+  transform-origin: center;
+}

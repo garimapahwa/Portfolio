@@ -1,0 +1,105 @@
+.contact__grid {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+@media (min-width: 1000px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: end;
+  }
+}
+
+.contact__lede {
+  max-width: 40ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  color: var(--fg-muted);
+}
+
+.contact__email-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.contact__email {
+  position: relative;
+  padding-bottom: 0.2rem;
+  font: 600 clamp(1.3rem, 2.6vw, 1.9rem) / 1.2 var(--font-sans);
+  color: var(--line);
+  overflow-wrap: anywhere;
+  background-image: linear-gradient(90deg, var(--line) 60%, transparent 60%);
+  background-size: 14px 2px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  transition: background-position 0.6s var(--ease);
+}
+
+.contact__email:hover,
+.contact__email:focus-visible {
+  background-position: 28px 100%;
+}
+
+.contact__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
+}
+
+.contact__copy:hover {
+  color: var(--fg);
+  border-bottom-color: currentColor;
+}
+
+.contact__list {
+  border-top: 2px dashed color-mix(in srgb, var(--line) 55%, transparent);
+}
+
+.contact__list li {
+  border-bottom: 1px dashed var(--rule-strong);
+}
+
+.contact__list a {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0.25rem;
+  transition:
+    padding 0.35s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.contact__label {
+  font: 500 1.1rem/1.2 var(--font-sans);
+}
+
+.contact__handle {
+  font-size: 0.66rem;
+  text-transform: none;
+  color: var(--fg-faint);
+}
+
+.contact__arrow {
+  transition: transform 0.35s var(--ease);
+}
+
+.contact__list a:hover,
+.contact__list a:focus-visible {
+  padding-left: 0.9rem;
+  color: var(--accent);
+}
+
+.contact__list a:hover .contact__arrow {
+  transform: translate(2px, -2px);
+}

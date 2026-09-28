@@ -1,0 +1,180 @@
+/* ---- activity strip (end of the Projects page) ---- */
+
+.activity {
+  margin-top: clamp(3.5rem, 8vw, 5rem);
+}
+
+.activity__title {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg-muted);
+}
+
+.activity__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .activity__grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+.widget {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  outline: 2px dashed transparent;
+  outline-offset: 5px;
+  transition:
+    transform 0.35s var(--ease),
+    outline-color 0.35s var(--ease);
+}
+
+a.widget:hover,
+a.widget:focus-visible {
+  transform: translateY(-3px);
+  outline-color: var(--line);
+}
+
+.widget__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.68rem;
+  color: var(--fg-faint);
+}
+
+.widget__label strong {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+/* ---- GitHub ---- */
+
+.gh__grid {
+  width: 100%;
+  height: auto;
+}
+
+.gh__grid rect {
+  transition: fill 0.4s var(--ease);
+}
+
+.gh__grid[data-status="loading"] rect {
+  animation: gh-shimmer 1.6s var(--ease-in-out) infinite;
+  animation-delay: var(--d);
+}
+
+.gh__grid[data-status="ready"] rect {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: gh-pop 0.6s var(--ease) both;
+  animation-delay: var(--d);
+}
+
+@keyframes gh-shimmer {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes gh-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+.gh__legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.64rem;
+  color: var(--fg-faint);
+  text-transform: none;
+}
+
+.gh__scale {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.gh__scale i {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+.gh__scale i:first-child {
+  margin-left: 4px;
+}
+
+.gh__scale i:last-child {
+  margin-right: 4px;
+}
+
+/* ---- LeetCode ---- */
+
+.lc__total {
+  font: 600 2rem/1 var(--font-sans);
+  color: var(--line);
+}
+
+.lc__total .meta {
+  font-size: 0.66rem;
+  color: var(--fg-faint);
+}
+
+.lc__bar {
+  display: flex;
+  gap: 3px;
+  height: 0.5rem;
+}
+
+.lc__seg {
+  flex-basis: 0;
+  border-radius: 999px;
+}
+
+.lc__seg--easy {
+  background: var(--heat-1);
+}
+
+.lc__seg--medium {
+  background: var(--heat-3);
+}
+
+.lc__seg--hard {
+  background: var(--heat-4);
+}
+
+.lc__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.62rem;
+  color: var(--fg-muted);
+}
+
+.lc__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lc__legend i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
