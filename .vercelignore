@@ -1,7 +1,8 @@
 .clang-module-cache
 .swift-module-cache
 .DS_Store
-images
-legacy
+# Only the large original photos in the root folder — not public/images, which the site serves
+/images
+/legacy
 node_modules
 dist
