@@ -20,12 +20,13 @@ export const socials = {
   },
   github: { label: "GitHub", handle: "@garimapahwa", href: "https://github.com/garimapahwa" },
   twitter: { label: "Twitter / X", handle: "@pahwaginni", href: "https://x.com/pahwaginni" },
+  telegram: { label: "Telegram", handle: "@ginnipahwa", href: "https://t.me/ginnipahwa" },
   leetcode: { label: "LeetCode", handle: "ginnipahwa05", href: "https://leetcode.com/u/ginnipahwa05/" },
   email: { label: "Email", handle: "pahwaginni96@gmail.com", href: "mailto:pahwaginni96@gmail.com" },
 };
 
-export const heroLinks = ["linkedin", "github", "twitter", "email"];
-export const contactLinks = ["linkedin", "github", "leetcode", "twitter"];
+export const heroLinks = ["linkedin", "github", "twitter", "telegram", "email"];
+export const contactLinks = ["linkedin", "github", "leetcode", "twitter", "telegram"];
 
 export const githubUsername = "garimapahwa";
 
