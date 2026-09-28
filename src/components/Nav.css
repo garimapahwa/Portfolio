@@ -18,20 +18,8 @@
 .nav__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  justify-content: flex-end;
   height: var(--nav-h);
-}
-
-.nav__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.nav__name {
-  font: 600 1rem/1 var(--font-sans);
-  letter-spacing: -0.01em;
 }
 
 .theme-toggle {

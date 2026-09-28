@@ -27,7 +27,7 @@ export default function App() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <Nav route={route} />
+      <Nav />
       <main id="main">{route === "home" ? <Home /> : <Page key={route} id={route} />}</main>
       <Footer />
     </>
