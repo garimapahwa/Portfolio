@@ -28,6 +28,20 @@
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#f5f5f3" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Vercel Web Analytics (enable it in the Vercel project → Analytics). Sections live at #/<id>,
+         so report them as /<id> paths; otherwise every page would count as the home page. -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      window.va("beforeSend", function (event) {
+        var url = new URL(event.url);
+        if (url.hash.indexOf("#/") === 0) {
+          url.pathname = url.hash.slice(1) || "/";
+          url.hash = "";
+        }
+        return Object.assign({}, event, { url: url.toString() });
+      });
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <div id="root"></div>
