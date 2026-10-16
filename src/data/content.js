@@ -201,6 +201,13 @@ export const research = [
 export const log = [
   {
     type: "Demo",
+    text: "Side Eye — a menu bar voice that catches you slacking and calls you out in Hinglish",
+    where: "X",
+    href: "https://x.com/pahwaginni/status/2110046452756119927",
+    date: "2026-10-13",
+  },
+  {
+    type: "Demo",
     text: "Tripwire — live cost & token logging for coding agents, with a switch to stop one that's stuck looping",
     where: "X",
     href: "https://x.com/pahwaginni/status/2087961198717514206",
