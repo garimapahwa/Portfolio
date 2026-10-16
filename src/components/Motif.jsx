@@ -45,6 +45,17 @@ const motifs = {
       <path className="motif__core" d="M136 29l10 6-10 6Z" />
     </svg>
   ),
+  // Narrowed eye, pupil glancing sideways — Side Eye
+  eye: (
+    <svg viewBox="0 0 160 80">
+      <path d="M14 40Q80 2 146 40Q80 78 14 40Z" />
+      <path className="motif__dash" d="M30 26 22 18M80 15V5M130 26l8-8" />
+      <g className="motif__glance">
+        <circle cx="80" cy="40" r="15" />
+        <circle className="motif__core" cx="80" cy="40" r="6" />
+      </g>
+    </svg>
+  ),
   // Broadcast rings — Pind Radio
   radio: (
     <svg viewBox="0 0 120 120">

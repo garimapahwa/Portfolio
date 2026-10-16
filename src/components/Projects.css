@@ -292,6 +292,15 @@
   }
 }
 
+.motif__glance {
+  transform: translateX(26px);
+  transition: transform 0.6s var(--ease);
+}
+
+.project:hover .motif__glance {
+  transform: translateX(-26px);
+}
+
 .motif__core {
   fill: currentColor;
   stroke: none;
