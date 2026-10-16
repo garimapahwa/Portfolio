@@ -116,6 +116,16 @@ export const moments = [
 // `source` is optional: a secondary link (e.g. GitHub) shown next to the main one.
 export const projects = [
   {
+    title: "Side Eye",
+    kicker: "macOS · Voice AI",
+    desc: "A menu bar focus buddy that catches you slacking and nags you out loud in Hinglish — it hears your excuse, checks your screen, and gets more dramatic the longer you ignore it.",
+    tags: ["Python", "Sarvam Bulbul", "Saaras", "macOS"],
+    link: { label: "Try it live", href: "https://side-eye-eta.vercel.app/" },
+    source: { label: "Source", href: "https://github.com/garimapahwa/side-eye" },
+    tone: "dark",
+    motif: "eye",
+  },
+  {
     title: "Docent",
     kicker: "Solana · Explainers",
     desc: "Paste any Solana transaction signature and get a plain-English explanation of what happened — transfers, balance changes, even failures — plus a narrated video walkthrough.",
