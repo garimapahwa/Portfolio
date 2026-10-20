@@ -118,6 +118,7 @@ export const projects = [
   {
     title: "Side Eye",
     kicker: "macOS · Voice AI",
+    award: "3rd place · Sarvam Bulbul Build Challenge",
     desc: "A menu bar focus buddy that catches you slacking and nags you out loud in Hinglish — it hears your excuse, checks your screen, and gets more dramatic the longer you ignore it.",
     tags: ["Python", "Sarvam Bulbul", "Saaras", "macOS"],
     link: { label: "Try it live", href: "https://side-eye-eta.vercel.app/" },

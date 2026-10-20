@@ -20,6 +20,7 @@ export default function Projects() {
                 </div>
 
                 <h2 className="project__title">{p.title}</h2>
+                {p.award && <p className="project__award meta">🥉 {p.award}</p>}
                 <p className="project__desc">{p.desc}</p>
 
                 <div className="project__foot">
