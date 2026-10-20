@@ -201,8 +201,8 @@ export const research = [
 //     href: "https://x.com/pahwaginni/status/…", date: "2026-09-28" },
 export const log = [
   {
-    type: "Demo",
-    text: "Side Eye — a menu bar voice that catches you slacking and calls you out in Hinglish",
+    type: "Post",
+    text: "Side Eye took 3rd place at the Sarvam Bulbul Build Challenge 🥉",
     where: "X",
     href: "https://x.com/pahwaginni/status/2110046452756119927",
     date: "2026-10-13",
