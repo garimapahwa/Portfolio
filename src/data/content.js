@@ -202,6 +202,12 @@ export const research = [
 //     href: "https://x.com/pahwaginni/status/…", date: "2026-09-28" },
 export const log = [
   {
+    type: "Writing",
+    text: "I Volunteered to Make People Hack on a Train",
+    where: "Medium",
+    href: "https://medium.com/@pahwaginni96/i-volunteered-to-make-people-hack-on-a-train-1e8ef7d84c5f?sharedUserId=pahwaginni96",
+  },
+  {
     type: "Post",
     text: "Side Eye took 3rd place at the Sarvam Bulbul Build Challenge 🥉",
     where: "X",
