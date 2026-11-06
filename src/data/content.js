@@ -131,7 +131,7 @@ export const projects = [
   {
     title: "Docent",
     kicker: "Solana · Explainers",
-    award: "🏆 $50 prize · AI and Friends Hackathon",
+    award: "🏆 $250 prize · AI and Friends Hackathon",
     desc: "Paste any Solana transaction signature and get a plain-English explanation of what happened — transfers, balance changes, even failures — plus a narrated video walkthrough.",
     tags: ["Next.js", "Solana web3.js", "Remotion", "ElevenLabs"],
     link: { label: "Try it live", href: "https://docent-kohl.vercel.app/" },
