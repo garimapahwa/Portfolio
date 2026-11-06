@@ -95,6 +95,7 @@ export const experience = [
 ];
 
 export const moments = [
+  { src: "volunteered-ethindia-2026.jpg", w: 562, h: 1000, title: "Volunteered at ETHIndia 2026", tag: "Volunteering" },
   { src: "push-to-prod-hackathon.jpg", w: 1000, h: 668, title: "Push to Prod Hackathon", tag: "Hackathon" },
   { src: "my-time-with-netflix.jpg", w: 902, h: 1000, title: "My time with Netflix", tag: "Netflix" },
   { src: "build-india-hackathon.jpg", w: 952, h: 1000, title: "Build India Hackathon", tag: "Hackathon" },
